@@ -1,0 +1,166 @@
+<!DOCTYPE html> 
+<head> 
+	<title>Phishing Detector</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head> 
+<style type="text/css">
+	#loader {
+	  position: absolute;
+	  left: 52.5%;
+	  top: 60%;
+	  z-index: 1;
+	  margin: -75px 0 0 -75px;
+	  border: 10px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 10px solid #D88F3C;
+	  width: 60px;
+	  height: 60px;
+	  -webkit-animation: spin 2s linear infinite;
+	  animation: spin 2s linear infinite;
+	  display: none;
+	}
+
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+
+	/* Add animation to "page content" */
+	.animate-bottom {
+	  position: relative;
+	  -webkit-animation-name: animatebottom;
+	  -webkit-animation-duration: 1s;
+	  animation-name: animatebottom;
+	  animation-duration: 1s
+	}
+
+	@-webkit-keyframes animatebottom {
+	  from { bottom:-100px; opacity:0 } 
+	  to { bottom:0px; opacity:1 }
+	}
+
+	@keyframes animatebottom { 
+	  from{ bottom:-100px; opacity:0 } 
+	  to{ bottom:0; opacity:1 }
+	}
+
+	#myDiv {
+		display: block;
+	}
+    body{
+        background-image: url("http://www.alena-vysotskaya.ru/images/400/DSC100454496.jpg");
+    }
+ /* search box */ 
+ .button_box2 {  padding-left: 12.5%;
+        padding-top: 10%  }
+  /*-------------------------------------*/ 
+  .cf:before, .cf:after{ content:""; display:table; } 
+  .cf:after{ clear:both; } 
+  .cf{ zoom:1; } 
+  /*-------------------------------------*/ 
+  .form-wrapper-2 {
+        width: 83%;
+
+        background: #000;
+        border-radius: 25px;
+    } 
+  .form-wrapper-2 input {
+        width: 84.25%;
+        height: 40px;
+        padding-left: 25px;
+	padding-top: 0.5%;
+	padding-bottom: 0.5%;
+        font: bold 15px 'Raleway', sans-serif;
+        border: 0;
+        background: #eee;
+	border-radius: 50px 5px 5px 50px;
+                } 
+  .form-wrapper-2 input:focus {
+       outline: 0;
+        background: #fff;
+            } 
+  .form-wrapper-2 input::-webkit-input-placeholder {
+
+        font-weight: normal;
+        font-style: italic;
+          } 
+  .form-wrapper-2 input:-moz-placeholder { 	
+        font-weight: normal;
+        font-style: italic;
+     } 
+  .form-wrapper-2 input:-ms-input-placeholder { 
+        font-weight: normal;
+        font-style: italic;
+     } 
+  .form-wrapper-2 button {
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 50px;
+        width: 12.75%;
+        font: bold 15px/40px 'Raleway', sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        background: #D88F3C;
+	border-radius: 5px 50px 50px 5px;
+                     } 
+  .form-wrapper-2 button:hover{ background: #FA8807; } 
+  .form-wrapper-2 button:active, .form-wrapper-2 button:focus{ background: #c42f2f; } 
+  .form-wrapper-2 button:before { content: ''; position: absolute; border-width: 8px 8px 8px 0; border-style: solid solid solid none; 
+				  border-color: transparent #D88F3C transparent; top: 12px; left: -6px; } 
+  .form-wrapper-2 button:hover:before{ border-right-color: #FA8807; } 
+  .form-wrapper-2 button:focus:before{ border-right-color: #c42f2f; } 
+  .form-wrapper-2 button::-moz-focus-inner { border: 0; padding: 0; } 
+  #myDiv p
+  {
+        font: bold 25px/40px 'Raleway', sans-serif;
+        color: #fff;
+        text-transform: uppercase;
+        position: absolute;
+        left: 35%;
+        top: 60%;
+  }
+  </style> 
+  <body onload='myFunction2();'> 
+      <!-- search form 6 --> 
+      <div class="button_box2"> 
+          <form class="form-wrapper-2 cf" method="POST" action="/send"> 
+              <input type="text" name = "url" placeholder="Enter url here..." required> 
+              <button type="submit" onclick="myFunction()">Check</button> 
+            </form> 
+        </div> 
+	<div class="webistestatus">
+		<div id="loader"></div>
+
+		<div style="display:none;" id="myDiv" class="animate-bottom">
+		<p>Website Status : {{ Check }}</p>
+		</div>
+
+	</div>
+	<script>
+		var myVar;
+		function myFunction2() {
+		  document.getElementById("myDiv").style.display = "block";
+		}
+
+		function myFunction() {
+		  document.getElementById("loader").style.display = "block";
+		  myVar = setTimeout(showPage, 2000);
+		}
+
+		function showPage() {
+		  document.getElementById("loader").style.display = "none";
+		  document.getElementById("myDiv").style.display = "block";
+
+		}
+
+
+	</script>
+    </body> 
+    </html>
+
