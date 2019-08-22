@@ -1,4 +1,4 @@
-# PHISHCOOP phishing website detection
+#  phishing website detection
 Detection of phishing websites is a really important safety measure for most of the online platforms. So, as to save a platform with malicious requests from such websites, it is important to have a robust phishing detection system in place.
 
 ## DATA SELECTION
@@ -30,7 +30,5 @@ Next model I wanted to try was random forest and I will also get features import
 
 Random forest was giving very good accuracy. We can also try artificial neural network to get a improved accuracy.
 
-## FEATURE IMPORTANCES
 
-![FEATURE IMPORTANCE](https://raw.githubusercontent.com/abhishekdid/PHISHCOOP-phishing-website-detection/master/variable_Importances.png)
 
